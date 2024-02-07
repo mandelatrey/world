@@ -7,9 +7,8 @@ class MarkingEditor {
         this.ctx = this.canvas.getContext("2d");
         this.mouse = null;
         this.intent = null;
-        this.markings = world.markings;
         this.targetSegments = targetSegments;
-
+        this.markings = world.markings;
     }
     
     //to be over written

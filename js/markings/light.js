@@ -1,7 +1,6 @@
 class Light extends Marking {
     constructor(center, directionVector, width, height) {
         super (center, directionVector, width, 18);
-
         this.state = "off";
         this.border = this.poly.segments[0];
         this.type = "light";
@@ -11,7 +10,7 @@ class Light extends Marking {
         const perp = perpendicular(this.directionVector);
         const line = new Segment (
             add(this.center, scale(perp, this.width / 2)),
-            add(this.center, scale(perp, - this.width / 2))
+            add(this.center, scale(perp, -this.width / 2))
         );
         
         const green = lerp2D(line.p1, line.p2, 0.2);
