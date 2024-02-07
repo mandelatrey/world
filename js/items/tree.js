@@ -1,8 +1,8 @@
 class Tree {
-    constructor (center, size, heightCoef = 0.3) {
+    constructor (center, size, heightCoeff = 0.4) {
         this.center = center;
         this.size = size; //size of the tree
-        this.heightCoef = heightCoef;
+        this.heightCoeff = heightCoeff;
         this.base = this.#generateLevel(center, size);
     }
 
@@ -21,7 +21,7 @@ class Tree {
         const diff = subtract(this.center, viewPoint)
         // this.center.draw(ctx, {size: this.size, color: "green"});
 
-        const top = add(this.center, scale(diff, this.heightCoef));
+        const top = add(this.center, scale(diff, this.heightCoeff));
 
         const levelCount = 7;
         for (let level = 0; level < levelCount; level++) {
@@ -31,8 +31,6 @@ class Tree {
             const size = lerp(this.size, 40, t);
             const poly = this.#generateLevel(point, size);
             poly.draw(ctx, { fill: color, stroke: "rgba(0,0,0,0)"});
-
         }
-
     }
 }

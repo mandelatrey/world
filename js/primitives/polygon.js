@@ -13,7 +13,6 @@ class Polygon {
         return new Polygon(
             info.points.map((i) => new Point(i.x, i.y))
         );
-        
     }
 
     static union(polys) {

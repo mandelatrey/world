@@ -3,8 +3,7 @@ class Envelope {
         if (skeleton) {
             this.skeleton = skeleton;
             this.poly = this.#generatePolygon(width, roundness);
-        }
-        
+        } 
     }
 
     static load(info) {
