@@ -336,6 +336,8 @@ class World {
         world.trees = info.trees.map((t) => new Tree(t.center, info.treeSize));
         world.laneGuides = info.laneGuides.map((g) => new Segment(g.p1, g.p2));
         world.markings = info.markings.map((m) => Marking.load(m));
+        world.zoom = info.zoom;
+        world.offset = world.offset;
         return world;
     }
 
@@ -530,7 +532,8 @@ class World {
             }
         }
 
-        const greenDuration = 2, yellowDuration = 1;
+        const greenDuration = 2, 
+            yellowDuration = 1;
 
         for (const center of controlCenters) {
             center.ticks = center.lights.length * (greenDuration + yellowDuration);
@@ -543,8 +546,7 @@ class World {
                 cTick / (greenDuration + yellowDuration)
             );
             const greenYellowState = 
-                cTick % (greenDuration + yellowDuration) < greenDuration?
-                    "green": "'yellow";
+                cTick % (greenDuration + yellowDuration) < greenDuration?"green":"yellow";
             
             for (let i = 0; i < center.lights.length; i++) {
                 if (i == greenYellowIndex) {

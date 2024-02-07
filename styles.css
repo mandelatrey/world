@@ -14,12 +14,26 @@ h1 {
 
 button {
     background-color: white;
-    font-size: 20px;
+    font-size: 13px;
     padding: 5px 7px 7px 5px;
     border: none;
-    border-radius: 10;
+    border-radius: 5px;
     text-shadow: 1px 1px grey;
     cursor: pointer;
     
 }
 
+button, .file-input-label {
+    display: inline-block;
+    background-color: white;
+    font-size: 12px;
+    padding: 5px 7px 7px 5px;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
